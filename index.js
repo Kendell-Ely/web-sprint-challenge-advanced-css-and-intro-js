@@ -230,10 +230,10 @@ console.log(artists[8].name);
  Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
 function getArtistByIndex(arr, num) {
-  return `the artist of the index ${arr[num].id} is ${arr[num].name}`;
+  return `the artist at index ${arr[num].id} is ${arr[num].name}`;
 }  
 
-console.log(getArtistByIndex(artists, 0));
+console.log(getArtistByIndex(artists, 0).toString());
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use get20s to do the following: 
@@ -247,7 +247,7 @@ function get20s(arr){
 
   const diedin20s = [];
 
-  for( let i = 0; i < artists.length; i++){
+  for( let i = 0; i < arr.length; i++){
 
     if ( artists[i].years.startsWith('19') && artists[i].years.startsWith('19',7)){
 
@@ -298,11 +298,22 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+function addArtist(arr){
+   let obj =  {id: 20,
+   name: "Kendell Ely", 
+   years: "1995 - current day",
+   genre: "Web Design", 
+   nationality: "American",
+   bio: "lorem ipsem"
+  };
 
-  
+  arr.push(obj);
+return arr;
+}
+
+console.log(addArtist(artists));
+
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use lotsOfArt to do the following: 
@@ -311,10 +322,27 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+
+function lotsOfArt(arr){
+
+  let lots = [];
+
+ for ( let i = 0; i < arr.length; i++ ){
+   
+   if( arr[i].paintings > 100) {
+     lots.push(arr[i].name);
+   }
+
+ 
+
+ }
+
+ return lots;
 }
 
+
+
+console.log(lotsOfArt(artists));
 
 
 
